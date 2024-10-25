@@ -41,7 +41,7 @@ body {
   .nav-cabecalho a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 25px;
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 10px;
     border: 1px solid transparent;
@@ -136,3 +136,4 @@ body {
     color: black;
   text-decoration: none; 
   }
+
