@@ -13,18 +13,18 @@ loginForm.addEventListener("submit", (evt) => {
     const users = JSON.parse(sessionStorage.getItem("users"));
     let logged = false;
     users.forEach(user => {
-
         if (user.username == username.value
             && user.password == password.value) {
             const userLogged = {
                 username: user.username,
                 password: user.password,
-                role: roles.DEFAULT
+                role: user.role
             }
             logged = true;
             sessionStorage.setItem("user", JSON.stringify(userLogged));
+            sessionStorage.setItem("logged", true);
             alert("Login realizado com sucesso!");
-            window.location.href = "../";
+            return window.location.href = "../";
         }
     });
     if(!logged) alert("Login incorreto!");

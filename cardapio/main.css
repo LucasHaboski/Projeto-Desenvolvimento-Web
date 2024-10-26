@@ -242,3 +242,44 @@ h3 {
   outline: 0;
   resize: none;
 }
+
+#cart {
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  width: 300px;
+  height: 400px;
+  background-color: #ff6600;
+  top: 30%;
+  left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#cart h2 {
+  color: #fff8e1;
+}
+
+#cartItens {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  max-height: 60%;
+  background-color: #fff8e1;
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px;
+}
+
+#cartItens {
+  user-select: none;
+}
+
+#cartTotal {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  background-color: #fff8e1;
+  border-radius: 10px;
+  padding: 0px 20px 0px 20px;
+}

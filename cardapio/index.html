@@ -2,10 +2,10 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="../imagens/NovoLogo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <link rel="icon" href="../imagens/NovoLogo.png" type="image/png" />
   <title>Cardápio - Lanchonete Felicidade</title>
-  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./main.css" />
 </head>
 
 <body>
@@ -13,9 +13,19 @@
     <label for="obs"><strong>Observações</strong>:</label>
     <textarea id="obs" name="obs" rows="15" cols="30" placeholder="Escreva suas observações aqui..."></textarea>
   </div>
+
+  <div id="cart">
+    <h2>Carrinho</h2>
+    <div id="cartItens"></div>
+    <div id="cartTotal">
+      <p>Total: R$20,00</p>
+      <p>Quantidade: 2</p>
+    </div>
+  </div>
+
   <header class="header">
     <div class="imagem">
-      <img src="../imagens/NovoLogo.png" alt="Logo da Lanchonete">
+      <img src="../imagens/NovoLogo.png" alt="Logo da Lanchonete" />
     </div>
 
     <div class="cima">
@@ -28,191 +38,194 @@
       <a href="#contato">Contato</a>
       <a href="../login/">Login</a>
       <div class="pesquisa">
-        <input type="text" placeholder="pesquisar...">
+        <input type="text" placeholder="pesquisar..." />
         <button type="submit">🔍</button>
       </div>
     </nav>
-  </header><br><br>
+  </header>
+  <br /><br />
   <section class="menu">
     <h1>Nosso Cardápio</h1>
-    <h2>Bebidas</h2>
-    <hr>
 
-    <div class="item">
+    <h2>Bebidas</h2>
+    <hr />
+
+    <form id="bebidas" class="item">
       <h3>Sucos</h3>
       <p>R$ 8,00</p>
-      <label for="tipo-sucos">Escolha o suco:</label>
-      <select id="sucos" name="Sucos">
-        <option value="pequeno"></option>
-        <option value="Laranja">Laranja</option>
-        <option value="Maçã">Maçã</option>
-        <option value="Uva">Uva</option>
-        <option value="Abacaxi">Abacaxi</option>
-        <option value="Morango">Morango</option>
-        <option value="Morango">Maracujá</option>
-        <option value="Morango">Limão</option>
-        <option value="Morango">Pêssego</option>
+      <input value=8 type="" name="valor" readonly hidden></input>
+      <label for="sucos">Escolha o item:</label>
+      <select id="sucos" name="item">
+        <option value="Suco Laranja" selected>Laranja</option>
+        <option value="Suco Maçã">Maçã</option>
+        <option value="Suco Uva">Uva</option>
+        <option value="Suco Abacaxi">Abacaxi</option>
+        <option value="Suco Morango">Morango</option>
+        <option value="Suco Maracujá">Maracujá</option>
+        <option value="Suco Limão">Limão</option>
+        <option value="Suco Pêssego">Pêssego</option>
       </select>
-      <label for="tamanho-refrigerante">Escolha o tamanho:</label>
-      <select id="tamanho-refrigerante" name="tamanho-refrigerante">
-        <option value=""></option>
-        <option value="pequeno">Pequeno</option>
+      <label for="tamanho-suco">Escolha o tamanho:</label>
+      <select id="tamanho-suco" name="tamanho">
+        <option value="pequeno" selected>Pequeno</option>
         <option value="medio">Médio</option>
         <option value="grande">Grande</option>
       </select>
       <label for="quantidade-suco">Quantidade:</label>
-      <input type="number" id="quantidade-suco" name="quantidade-suco" min="1" value="1">
-      <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
+      <input type="number" id="quantidade-suco" name="quantidade" min="1" value="1" />
+      <button class="add-carrinho" type="submit">
+        Adicionar ao Carrinho
+      </button>
+    </form>
 
-    <div class="item">
+    <form class="item">
       <h3>Refrigerantes</h3>
       <p>R$ 5,00</p>
-      <label for="tipo-refrigerante">Escolha o Refrigerante:</label>
-      <select id="refrigerante" name="refrigerante">
-        <option value=""></option>
-        <option value="Coca-Cola">Coca-Cola</option>
+      <input value=5 type="" name="valor" readonly hidden></input>
+      <label for="tipo-refrigerante">Escolha o item:</label>
+      <select id="tipo-refrigerante" name="item">
+        <option value="Coca-Cola" selected>Coca-Cola</option>
         <option value="Pepsi">Pepsi</option>
         <option value="Guaraná Antarctica">Guaraná Antarctica</option>
         <option value="Sprite">Sprite</option>
         <option value="Fanta Laranja">Fanta Laranja</option>
       </select>
       <label for="tamanho-refrigerante">Escolha o tamanho:</label>
-      <select id="tamanho-refrigerante" name="tamanho-refrigerante">
-        <option value=""></option>
+      <select id="tamanho-refrigerante" name="tamanho">
         <option value="pequeno">Pequeno</option>
         <option value="medio">Médio</option>
         <option value="grande">Grande</option>
       </select>
       <label for="quantidade-refrigerante">Quantidade:</label>
-      <input type="number" id="quantidade-refrigerante" name="quantidade-refrigerante" min="1" value="1">
+      <input type="number" id="quantidade-refrigerante" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
+    </form>
 
-    <div class="item">
+    <form class="item">
       <h3>Água</h3>
       <p>R$ 5,00</p>
-      <label for="tipo">Escolha a água:</label>
-      <select id="agua" name="agua">
-        <option value=""></option>
-        <option value="Com gás">Com gás</option>
-        <option value="Sem gás">Sem gás</option>
+      <input value=5 type="" name="valor" readonly hidden></input>
+      <label for="tipo-agua">Escolha o item:</label>
+      <select id="tipo-agua" name="item">
+        <option value="Água Com gás" selected>Água Com gás</option>
+        <option value="Água Sem gás">Água Sem gás</option>
       </select>
       <label for="tamanho-agua">Escolha o tamanho:</label>
-      <select id="agua" name="agua">
-        <option value=""></option>
+      <select id="tamanho-agua" name="tamanho">
         <option value="pequeno">Pequeno</option>
         <option value="medio">Médio</option>
         <option value="grande">Grande</option>
       </select>
       <label for="quantidade-agua">Quantidade:</label>
-      <input type="number" id="quantidade-agua" name="quantidade-agua" min="1" value="1">
+      <input type="number" id="quantidade-agua" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <br>
+    </form>
 
     <h2>Lanches</h2>
-    <hr>
+    <hr />
 
-    <div class="item">
+    <form class="item">
       <h3>X-Bacon</h3>
-      <p>Pão, carne, queijo, salada, cebola, bacon e cebola caramelizado.</p>
+      <input value="X-Bacon" type="text" name="item" readonly hidden></input>
+      <p>Pão, carne, queijo, salada, cebola, bacon e cebola caramelizada.</p>
       <p>R$ 45,00</p>
+      <input value=45 type="" name="valor" readonly hidden></input>
       <label for="quantidade-xbacon">Quantidade:</label>
-      <input type="number" id="quantidade-xbacon" name="quantidade-xbacon" min="1" value="1">
+      <input type="number" id="quantidade-xbacon" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <div class="item">
+    </form>
+
+    <form class="item">
       <h3>Hot Dog</h3>
+      <input value="Hot Dog" type="text" name="item" readonly hidden></input>
       <p>Salsicha, pão, batata e molhos.</p>
       <p>R$ 28,00</p>
+      <input value=28 type="" name="valor" readonly hidden></input>
       <label for="quantidade-hotdog">Quantidade:</label>
-      <input type="number" id="quantidade-hotdog" name="quantidade-hotdog" min="1" value="1">
+      <input type="number" id="quantidade-hotdog" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <div class="item">
+    </form>
+
+    <form class="item">
       <h3>X-egg</h3>
+      <input value="X-egg" type="text" name="item" readonly hidden></input>
       <p>Pão, carne, queijo, alface, tomate, ovo e molho especial.</p>
       <p>R$ 25,00</p>
+      <input value=25 type="" name="valor" readonly hidden></input>
       <label for="quantidade-xegg">Quantidade:</label>
-      <input type="number" id="quantidade-xegg" name="quantidade-xegg" min="1" value="1">
+      <input type="number" id="quantidade-xegg" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <div class="item">
+    </form>
+
+    <form class="item">
       <h3>X-Salada</h3>
+      <input value="X-Salada" type="text" name="item" readonly hidden></input>
       <p>Pão, carne, queijo, alface, tomate, cebola e molho especial.</p>
       <p>R$ 35,00</p>
+      <input value=35 type="" name="valor" readonly hidden></input>
       <label for="quantidade-xsalada">Quantidade:</label>
-      <input type="number" id="quantidade-xsalada" name="quantidade-xsalada" min="1" value="1">
+      <input type="number" id="quantidade-xsalada" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <div class="item">
+    </form>
+
+    <form class="item">
       <h3>X-chicken</h3>
+      <input value="X-chicken" type="text" name="item" readonly hidden></input>
       <p>Pão, frango, maionese, queijo, alface e cebola.</p>
       <p>R$ 30,00</p>
+      <input value=30 type="" name="valor" readonly hidden></input>
       <label for="quantidade-xchicken">Quantidade:</label>
-      <input type="number" id="quantidade-xchicken" name="quantidade-xchicken" min="1" value="1">
+      <input type="number" id="quantidade-xchicken" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    </div>
-
+    </form>
 
     <h2>Kids</h2>
-    <hr>
+    <hr />
 
-    <div class="item">
+    <form class="item">
       <h3>Combo</h3>
+      <input value="Combo Kids" type="text" name="item" readonly hidden></input>
       <p>Hamburguer, hot-dog, batatas smile, milk shake e suco.</p>
       <p>R$ 40,00</p>
-      <label for="quantidade-Combo">Quantidade:</label>
-      <input type="number" id="quantidade-Combo" name="quantidade-Combo" min="1" value="1">
+      <input value=40 type="" name="valor" readonly hidden></input>
+      <label for="quantidade-combo">Quantidade:</label>
+      <input type="number" id="quantidade-combo" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
+    </form>
 
     <h2>Sobremesas</h2>
-    <hr>
+    <hr />
 
-    <div class="item">
-      <h3>Cheesecake</h3>
-      <p>R$ 18,00</p>
-      <label for="quantidade-Cheesecake">Quantidade:</label>
-      <input type="number" id="quantidade-Cheesecake" name="quantidade-Cheesecake" min="1" value="1">
+    <form class="item">
+      <h3>Pudim</h3>
+      <p>Pudim tradicional de leite.</p>
+      <input value="Pudim tradicional de leite" type="text" name="item" readonly hidden></input>
+      <p>R$ 15,00</p>
+      <input value=15 type="" name="valor" readonly hidden></input>
+      <label for="quantidade-pudim">Quantidade:</label>
+      <input type="number" id="quantidade-pudim" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <div class="item">
-      <h3>Sorvetes</h3>
-      <p>R$ 7,00</p>
-      <label for="tipo">Escolha o sorvete:</label>
-      <select id="sorvete" name="sorvete">
-        <option value=""></option>
-        <option value="Chocolate">Chocolate</option>
-        <option value="Morango">Morango</option>
-        <option value="Baunilha">Baunilha</option>
+    </form>
+
+    <form class="item">
+      <h3>Sorvete</h3>
+      <p>Escolha o sabor e a quantidade desejada.</p>
+      <p>R$10,00</p>
+      <input value=10 type="" name="valor" readonly hidden></input>
+      <label for="sabor-sorvete">Escolha o sabor:</label>
+      <select id="sabor-sorvete" name="item">
+        <option value="Sorvete de Chocolate" selected>Chocolate</option>
+        <option value="Sorvete de Morango">Morango</option>
+        <option value="Sorvete de Baunilha">Baunilha</option>
+        <option value="Sorvete de Flocos">Flocos</option>
       </select>
-      <label for="quantidade-Sorvetes">Quantidade:</label>
-      <input type="number" id="quantidade-Sorvetes" name="quantidade-Sorvetes" min="1" value="1">
+      <label for="quantidade-sorvete">Quantidade:</label>
+      <input type="number" id="quantidade-sorvete" name="quantidade" min="1" value="1" />
       <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-    <div class="item">
-      <h3>Churros</h3>
-      <p>R$ 5,00</p>
-      <label for="tipo">Escolha o sabor:</label>
-      <select id="churros" name="churros">
-        <option value=""></option>
-        <option value="Chocolate">Chocolate</option>
-        <option value="Doce de leite">Doce de leite</option>
-      </select>
-      <label for="quantidade-Churros">Quantidade:</label>
-      <input type="number" id="quantidade-Churros" name="quantidade-Churros" min="1" value="1">
-      <button class="add-carrinho">Adicionar ao Carrinho</button>
-    </div>
-   
-   
-    <div class="container">
-      <button class="cart-button">Carrinho</button>
-    </div>
+    </form>
   </section>
-  <br><br>
+
+  <br /><br />
   <section id="promo" class="promocoes infos">
     <h2>Promoções</h2>
     <p>Confira nossas promoções especiais!</p>
@@ -220,24 +233,32 @@
 
   <section id="sobre" class="sobreNos infos">
     <h2>Sobre Nós</h2>
-    <p>Nosso compromisso? Sabor, qualidade e aquele atendimento que faz você voltar sempre.</p>
+    <p>
+      Nosso compromisso? Sabor, qualidade e aquele atendimento que faz você
+      voltar sempre.
+    </p>
   </section>
 
   <section id="contato" class="contatos infos">
     <h2>Contato</h2>
-    <p>Telefone: <a href="TEL:(41) 9 9999-9999" class="telLink">(41) 9 9999-9999</a></p>
-    <p>Endereço: <a
-        href=" https://www.google.com/search?q=universidade+positivo&rlz=1C1PNFE_enBR1132BR1132&oq=univer&gs_lcrp=EgZjaHJvbWUqDQgBEAAYgwEYsQMYgAQyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIHCAIQLhiABDIHCAMQLhiABDIHCAQQABiABDIHCAUQABiABDINCAYQABiDARixAxiABDIHCAcQLhiABDIHCAgQABiPAjIHCAkQABiPAtIBCDI2NTRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8"
-        class="Endereço"> R. Prof. Pedro Viriato Parigot de Souza, 5300 - Cidade Industrial, Curitiba - PR</a></p>
+    <p>
+      Telefone:
+      <a href="TEL:(41) 9 9999-9999" class="telLink">(41) 9 9999-9999</a>
+    </p>
+    <p>
+      Endereço:
+      <a href="https://www.google.com/search?q=universidade+positivo" class="Endereço">R. Prof. Pedro Viriato Parigot de
+        Souza, 5300 - Cidade Industrial,
+        Curitiba - PR</a>
+    </p>
     <p>Horário: Seg-Sex, 10h - 22h</p>
   </section>
 
-
   <footer class="footer">
-    <p><strong>Siga-nos nas redes sociais!</strong> </p>
+    <p><strong>Siga-nos nas redes sociais!</strong></p>
   </footer>
 
-
+  <script src="./script.js"></script>
 </body>
 
 </html>
