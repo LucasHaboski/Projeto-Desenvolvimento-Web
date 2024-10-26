@@ -1,51 +1,17 @@
-const btnLogin = document.getElementById('btnLogin')
-const btnFechar = document.getElementById('btnFechar')
-const dialog = document.getElementById('login')
-const frmLogin = document.querySelector('#login form')
+const roles = {
+  ADMIN: "admin",
+  DEFAULT: "default",
+};
 
-btnLogin.onclick = function(){
-    dialog.showModal()
-    let msgErro = document.querySelector('.erro')
-    if(msgErro) {
-        dialog.removeChild(msgErro)
-    }
-}
+const usersData = [
+  { username: "admin", password: "pass", role: roles.ADMIN },
+  { username: "user 1", password: "pass", role: roles.DEFAULT },
+  { username: "user 2", password: "pass", role: roles.DEFAULT },
+];
 
-btnFechar.onclick = function(){
-    dialog.close()
-}
+sessionStorage.setItem("users", JSON.stringify(usersData));
 
-let dadosUsuario = [
-    {nome: "user", email: "teste@teste.com", senha: "123"},
-    {nome: "aluno", email: "aluno@teste.com", senha: "321"}
-]
+const user = JSON.parse(sessionStorage.getItem("user"));
 
-frmLogin.addEventListener('submit', evento => {
-    evento.preventDefault()
-    
-    let msgErro = document.querySelector('.erro')
-    if(msgErro) {
-        dialog.removeChild(msgErro)
-    }
-
-    let email = document.getElementById('email').value
-    let senha = document.getElementById('senha').value
-
-    dadosUsuario.forEach(usuario => {
-        if (email === usuario.email && senha === usuario.senha) {
-            sessionStorage.setItem('usuarioLogado', true)
-            sessionStorage.setItem('nomeUsuario', usuario.nome)
-        
-            window.location.href = './admin/index.html'
-        }
-    })
-
-    let logado = sessionStorage.getItem('usuarioLogado')
-    if (!logado) {
-        let erro = document.createElement('p')
-        erro.classList.add('erro')
-        erro.innerText = 'Login ou senha invalida'
-        dialog.insertBefore(erro, dialog.firstChild)
-        document.querySelector()
-    }
-})
+console.log("User logged: ");
+console.log(user);
