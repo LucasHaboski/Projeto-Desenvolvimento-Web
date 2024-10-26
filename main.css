@@ -1,13 +1,12 @@
 .imagem  {
-    margin-left: 10px;
-    width: 50px;
-    height: 50px;
-    
+  width: 5px;
+  height: 5px;   
 }
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+ 
   }
   
 .cima{
@@ -41,7 +40,7 @@ body {
   .nav-cabecalho a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 25px;
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px;
     border: 1px solid transparent;
@@ -53,6 +52,7 @@ body {
   }
   
    .banner {
+    background-color:#fff8e1 ;
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -60,6 +60,7 @@ body {
   } 
   
   .botaopedido {
+    border-radius: 30px;
     background-color: #ff6600;
     color: white;
     border: none;
@@ -76,7 +77,7 @@ body {
   .conteudo {
     padding: 40px 20px;
     text-align: center;
-    background-color: rgba(50, 168, 236, 0.384);
+    background-color: #fff8e1;
   }
   
   .produtos {
@@ -85,15 +86,18 @@ body {
   }
   
   .produto {
+    border-radius: 30px;
     border: 1px solid #ddd;
     padding: 20px;
     width: 30%;
     background-color: #ff6600;
     color: #ffffff;
+   
   }
   
   .produtos img {
     width: 100%;
+    border-radius: 30px;
   }
   
   .promocoes {
@@ -123,17 +127,45 @@ body {
     padding: 20px;
   }
 
-  .telLink{
+  .telLink, .Endereço{
     color: black;
   text-decoration: none; 
   
   }
   .telLink:hover, .Endereço:hover{
-    color: #ff6600; /* Texto fica branco ao passar o mouse */
+    color: #ff6600; 
   }
 
-  .Endereço{
-    color: black;
-  text-decoration: none; 
-  }
+.logo h1 {
+    margin: 0;
+}
 
+.pesquisa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pesquisa input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pesquisa button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.pesquisa button:hover {
+  background-color: #ddd;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
