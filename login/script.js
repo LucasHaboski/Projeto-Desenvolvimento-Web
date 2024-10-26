@@ -24,7 +24,7 @@ loginForm.addEventListener("submit", (evt) => {
             sessionStorage.setItem("user", JSON.stringify(userLogged));
             sessionStorage.setItem("logged", true);
             alert("Login realizado com sucesso!");
-            return window.location.href = "../";
+            return window.location.href = "../index.html";
         }
     });
     if(!logged) alert("Login incorreto!");
