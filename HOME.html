@@ -2,26 +2,29 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="./SEM FUNDO.png" type="image/png">
+  <link rel="icon" href="./imagens/NovoLogo.png" type="image/png">
   <title>Lanchonete Felicidade</title>
   <link rel="stylesheet" href="HOME.css">
 </head>
 <body>
   <header class="header">
+
     <div class="imagem">
-        <img src="./SEM FUNDO.png" alt="Logo da Lanchonete Felicidade">
+        <img src="./imagens/NovoLogo.png" alt="Logo da Alegria no Ponto">
     </div>
     
     <div class="cima">
-    <p><strong>Bem-vindo á Lanchonete Felicidade!</strong></p>
-</div>
+        <p><strong>Bem-vindo á Alegria no Ponto!</strong></p>
+    </div>  
+
     <nav class="nav-cabecalho">
       <a href ="HOME.html">Home</a>
-      <a href ="lanches.html">Cardápio</a>
-    <a href="#sobre">Sobre Nós</a>
-    <a href="#contato">Contato</a>
-    <a href="#destaques">Login</a>
+      <a href ="CARDAPIO.html">Cardápio</a>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#contato">Contato</a>
+      <a href="#login" id="btnLogin">Login</a>
     </nav>
+
     <div class= "pesquisa" >
       <input type="text" placeholder="pesquisar...">
       <button type="submit">🔍</button>
@@ -41,21 +44,21 @@
     <div class="produtos">
       <div class="produto">
         <a href="lanches.html">
-        <img src="./att 1.jpg" alt="Hot dog">
+        <img src="./imagens/produto1.jpg" alt="Hot dog">
         <h3>Hot dog</h3>
         <p>R$ 28,00</p>
       </a>
       </div>
       <div class="produto">
         <a href="lanches.html">
-        <img src="./att2.jpg" alt="Hamburguer">
+        <img src="./imagens/produto4.jpg" alt="Hamburguer">
         <h3>X-Bacon</h3>
         <p>R$ 45,00</p>
         </a>
       </div>
       <div class="produto">
         <a href="lanches.html">
-        <img src="./att3.jpg" alt="Combo Kids">
+        <img src="./imagens/produto5.jpg" alt="Combo Kids">
         <h3>Combo Kids</h3>
         <p>R$ 40,00</p>
       </a>
@@ -85,6 +88,20 @@
   <footer class="footer">
     <p><strong>Siga-nos nas redes sociais!</strong></p>
   </footer>
+
+  <dialog id="login">
+    <form>
+        <h2>Login</h2>
+            <label for="email"> E-mail:</label>
+            <input type="text" name="email" id="email"><br>
+            <label for="senha"> Senha: </label>
+            <input type="password" name="senha" id="senha"><br>
+            <button type="button" id="btnFechar">Sair</button>
+            <button type="submit">Entrar</button>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
