@@ -13,13 +13,13 @@ var user = null;
  */
 const logged = /true/i.test(sessionStorage.getItem("logged"));
 
-if (!logged) window.location.href = "../login";
+if (!logged) window.location.href = "../login/index.html";
 
 if (logged) {
   user = JSON.parse(sessionStorage.getItem("user"));
   if (user.role != roles.DEFAULT) {
     alert("Apenas um usuário padrão pode usar essa área!");
-    window.location.href = "../";
+    window.location.href = "../index.html";
   }
 }
 const carts = [];
