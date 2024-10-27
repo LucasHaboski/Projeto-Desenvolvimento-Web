@@ -15,3 +15,16 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 
 console.log("User logged: ");
 console.log(user);
+
+function addAdminMenu() {
+  const menuCabecalho = document.getElementById("menuCabecalho");
+  const adminMenuItem = document.createElement("a");
+  adminMenuItem.href = "./admin/index.html"; 
+  adminMenuItem.textContent = "Admin";
+  menuCabecalho.appendChild(adminMenuItem);
+}
+let role = user.role;
+if(role == roles.ADMIN){
+  console.log("createAdminMenu");
+ addAdminMenu();
+}
