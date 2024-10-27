@@ -21,6 +21,9 @@ if (logged) {
     alert("Apenas um usuário padrão pode usar essa área!");
     window.location.href = "../index.html";
   }
+  else{
+    addAdminMenu();
+  }
 }
 const carts = [];
 
@@ -130,3 +133,12 @@ obs.addEventListener("keydown", (evt) => {
     sessionStorage.setItem("observacoes", JSON.stringify(observacoes));
   }
 });
+
+function addAdminMenu() {
+  const menuCabecalho = document.getElementById("menuCabecalho");
+  const adminMenuItem = document.createElement("a");
+  adminMenuItem.href = "./admin/index.html"; 
+  adminMenuItem.textContent = "Admin";
+  menuCabecalho.appendChild(adminMenuItem);
+}
+
