@@ -73,3 +73,18 @@ form button {
   cursor: pointer;
   font-size: medium;
 }
+
+.botao-voltar {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.botao-voltar:hover {
+  background-color: #ff8c40;
+}
