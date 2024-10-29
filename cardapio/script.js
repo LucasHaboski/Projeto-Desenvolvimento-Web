@@ -5,12 +5,6 @@ const roles = {
 
 var user = null;
 
-/**
- * Infelizmente todo objeto e tipo que entra no localStorage se torna uma string
- * para resolver isso é passado um regex para verificar se a palavra 'true' está presente
- *
- * @author Guilherme Enache Caetano
- */
 const logged = /true/i.test(sessionStorage.getItem("logged"));
 
 if (!logged) window.location.href = "../login/index.html";
@@ -92,7 +86,7 @@ buildCart();
 
 const obs = document.getElementById("obs");
 
-const observacoes = [];
+const observacoes = []; 
 if (JSON.parse(sessionStorage.getItem("observacoes")) != null) {
   observacoes.push(...JSON.parse(sessionStorage.getItem("observacoes")));
 

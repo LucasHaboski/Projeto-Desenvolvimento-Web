@@ -23,8 +23,8 @@ function addAdminMenu() {
   adminMenuItem.textContent = "Admin";
   menuCabecalho.appendChild(adminMenuItem);
 }
-let role = user.role;
-if(role == roles.ADMIN){
+
+if(user.role == roles.ADMIN){
   console.log("createAdminMenu");
  addAdminMenu();
 }
