@@ -1,8 +1,3 @@
-const roles = {
-    ADMIN: "admin",
-    DEFAULT: "default"
-}
-
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", (evt) => {
@@ -22,7 +17,6 @@ loginForm.addEventListener("submit", (evt) => {
             }
             logged = true;
             sessionStorage.setItem("user", JSON.stringify(userLogged));
-            sessionStorage.setItem("logged", true);
             alert("Login realizado com sucesso!");
             return window.location.href = "../index.html";
         }

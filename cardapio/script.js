@@ -1,25 +1,18 @@
-insertHeader();
+insertHeader("../", "Explore Sabores Únicos no Nosso Cardápio!");
 
-const roles = {
-  ADMIN: "admin",
-  DEFAULT: "default",
-};
+const user = JSON.parse(sessionStorage.getItem("user"));
 
-var user = null;
+if (user == null) window.location.href = "../login/index.html";
 
-const logged = /true/i.test(sessionStorage.getItem("logged"));
-
-if (!logged) window.location.href = "../login/index.html";
-
-if (logged) {
-  user = JSON.parse(sessionStorage.getItem("user"));
+if (user !== null) {
   if (user.role != roles.DEFAULT) {
     alert("Apenas um usuário padrão pode usar essa área!");
     window.location.href = "../index.html";
   } else {
-    addAdminMenu();
+    // addAdminMenu();
   }
 }
+
 const carts = [];
 
 if (JSON.parse(sessionStorage.getItem("carts")) != null)

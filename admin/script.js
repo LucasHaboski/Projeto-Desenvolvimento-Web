@@ -1,3 +1,4 @@
+insertHeader("../", "Portal do Administrador");
 function generateCards() {
     const cardContainer = document.getElementById('cardContainer');
     const carts = [];
