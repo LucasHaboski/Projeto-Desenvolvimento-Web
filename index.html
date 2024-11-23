@@ -5,6 +5,7 @@
   <link rel="icon" href="./imagens/NovoLogo.png" type="image/png">
   <title>Lanchonete Felicidade</title>
   <link rel="stylesheet" href="./main.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -21,7 +22,7 @@
       <a href ="./cardapio/index.html">Cardápio</a>
       <a href="#sobre">Sobre Nós</a>
       <a href="#contato">Contato</a>
-      <a href="./login/index.html" id="btnLogin">Login</a>
+      <a href="#login" id="btnLogin">Login</a>
     </nav>
 
   </header>
@@ -87,16 +88,16 @@
   <dialog id="login">
     <form>
         <h2>Login</h2>
-            <label for="email"> E-mail:</label>
-            <input type="text" name="email" id="email"><br>
+            <label for="user"> Usuario:</label>
+            <input type="text" name="user" id="username"><br>
             <label for="senha"> Senha: </label>
-            <input type="password" name="senha" id="senha"><br>
+            <input type="password" name="senha" id="password"><br>
             <button type="button" id="btnFechar">Sair</button>
             <button type="submit">Entrar</button>
     </form>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="./login.js"></script>
 
 </body>
 </html>
