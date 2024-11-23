@@ -1,3 +1,5 @@
+insertHeader();
+
 const roles = {
   ADMIN: "admin",
   DEFAULT: "default",
@@ -24,7 +26,7 @@ function addAdminMenu() {
   menuCabecalho.appendChild(adminMenuItem);
 }
 
-if(user.role == roles.ADMIN){
+if(user !== null && user.role == roles.ADMIN){
   console.log("createAdminMenu");
  addAdminMenu();
 }
