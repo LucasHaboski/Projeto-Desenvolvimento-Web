@@ -1,8 +1,10 @@
-.imagem {
-  margin-left: 10px;
-  width: 50px;
-  height: 50px;
+.header .imagem img {
+  position: absolute; /* Permite posicionar a imagem livremente dentro do cabeçalho */
+  top: 10px; /* Ajuste a distância do topo conforme necessário */
+  left: 10px; /* Ajuste a distância da esquerda conforme necessário */
+  width: 200px; /* Defina um tamanho apropriado para a imagem */
 }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,7 +12,9 @@ body {
   background-color: #fff8e1;
 }
 
+
 .cima p {
+  margin-top: -20px;
   color: #ffffff;
   font-size: 30px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -24,7 +28,10 @@ h3 {
   background-color: #ff6600;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  position: relative; /* Cria o contexto de posicionamento para os elementos dentro do header */
+  padding: 69px; /* Opcional: ajusta o espaçamento interno */
+  height: 100px; /* Define uma altura fixa para o cabeçalho */
 }
 
 .nav-cabecalho {
@@ -181,10 +188,11 @@ h3 {
   padding: 20px;
 }
 
+
 .cart-button {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 30px;
   padding: 15px 25px;
   background-color: #ff5722;
   color: white;
@@ -197,6 +205,22 @@ h3 {
 
 .cart-button:hover {
   background-color: #ff6347;
+}
+
+.fechar-carrinho {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.fechar-carrinho:hover {
+  color: #ffffff; 
 }
 
 .footer {
@@ -244,7 +268,7 @@ h3 {
 }
 
 #cart {
-  /* display: flex; */
+  display: flex; 
   display: none;
   flex-direction: column;
   justify-content: space-between;
