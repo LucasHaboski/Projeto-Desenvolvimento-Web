@@ -1,24 +1,18 @@
-const roles = {
-  ADMIN: "admin",
-  DEFAULT: "default",
-};
+insertHeader("../", "Explore Sabores Únicos no Nosso Cardápio!");
 
-var user = null;
+const user = JSON.parse(sessionStorage.getItem("user"));
 
-const logged = /true/i.test(sessionStorage.getItem("logged"));
+if (user == null) window.location.href = "../login/index.html";
 
-if (!logged) window.location.href = "../login/index.html";
-
-if (logged) {
-  user = JSON.parse(sessionStorage.getItem("user"));
+if (user !== null) {
   if (user.role != roles.DEFAULT) {
     alert("Apenas um usuário padrão pode usar essa área!");
     window.location.href = "../index.html";
-  }
-  else{
-    addAdminMenu();
+  } else {
+    // addAdminMenu();
   }
 }
+
 const carts = [];
 
 if (JSON.parse(sessionStorage.getItem("carts")) != null)
@@ -86,12 +80,12 @@ buildCart();
 
 const obs = document.getElementById("obs");
 
-const observacoes = []; 
+const observacoes = [];
 if (JSON.parse(sessionStorage.getItem("observacoes")) != null) {
   observacoes.push(...JSON.parse(sessionStorage.getItem("observacoes")));
 
   const index = observacoes.findIndex(
-    (ob) => (ob.user.username === user.username)
+    (ob) => ob.user.username === user.username
   );
 
   if (index > -1) obs.value = observacoes[index].obs;
@@ -100,7 +94,7 @@ if (JSON.parse(sessionStorage.getItem("observacoes")) != null) {
 obs.addEventListener("keydown", (evt) => {
   if (observacoes.length > 0) {
     const index = observacoes.findIndex(
-      (ob) => (ob.user.username === user.username)
+      (ob) => ob.user.username === user.username
     );
     if (index > -1) {
       observacoes[index].obs = obs.value;
@@ -131,8 +125,7 @@ obs.addEventListener("keydown", (evt) => {
 function addAdminMenu() {
   const menuCabecalho = document.getElementById("menuCabecalho");
   const adminMenuItem = document.createElement("a");
-  adminMenuItem.href = "./admin/index.html"; 
+  adminMenuItem.href = "./admin/index.html";
   adminMenuItem.textContent = "Admin";
   menuCabecalho.appendChild(adminMenuItem);
 }
-

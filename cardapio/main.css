@@ -1,8 +1,5 @@
 .header .imagem img {
-  position: absolute; /* Permite posicionar a imagem livremente dentro do cabeçalho */
-  top: 10px; /* Ajuste a distância do topo conforme necessário */
-  left: 10px; /* Ajuste a distância da esquerda conforme necessário */
-  width: 200px; /* Defina um tamanho apropriado para a imagem */
+  width: 200px;
 }
 
 body {
@@ -12,9 +9,14 @@ body {
   background-color: #fff8e1;
 }
 
-
+.cima {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 400px);
+}
 .cima p {
-  margin-top: -20px;
   color: #ffffff;
   font-size: 30px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -24,14 +26,11 @@ h3 {
   color: #ffffff;
 }
 
-.header {
+header {
+  display: flex;
   background-color: #ff6600;
   color: white;
   text-align: center;
-  padding: 10px;
-  position: relative; /* Cria o contexto de posicionamento para os elementos dentro do header */
-  padding: 69px; /* Opcional: ajusta o espaçamento interno */
-  height: 100px; /* Define uma altura fixa para o cabeçalho */
 }
 
 .nav-cabecalho {

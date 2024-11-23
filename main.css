@@ -1,149 +1,133 @@
-.imagem  {
-  width: 5px;
-  height: 5px;   
-}
+/* Estilo Global */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
- 
-  }
-  
-.cima{
-    color: #ffffff;
-    font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-  h1, h2 {
-    color: #ff6600;
-  }
+h1, h2 {
+  color: #ff6600;
+}
 
-  h3{
-    color: #ffffff;
-  }
-  
-  .header {
-    background-color: #ff6600;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    
-  }
+h3 {
+  color: #ffffff;
+}
 
-  .nav-cabecalho {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .nav-cabecalho a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 25px;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border: 1px solid transparent;
-    transition: border-color 0.3s;
-  }
-  
-  .nav-cabecalho a:hover {
-    border-color: white;
-  }
-  
-   .banner {
-    background-color:#fff8e1 ;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 60px 20px;
-  } 
-  
-  .botaopedido {
-    border-radius: 30px;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .botaopedido:hover {
-    background-color: #ff8800;
-  }
-  
-  .conteudo {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #fff8e1;
-  }
-  
-  .produtos {
-    display: flex;
-    justify-content: space-around;   
-  }
-  
-  .produto {
-    border-radius: 30px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 30%;
-    background-color: #ff6600;
-    color: #ffffff;
-   
-  }
-  
-  .produtos img {
-    width: 100%;
-    border-radius: 30px;
-  }
-  
-  .promocoes {
-    background-color: #f7f7f7;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .sobreNos {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .contatos {
-    padding: 40px 20px;
-    text-align: center;
-    height: 170px;
-    background-color: #ddd;
-    padding: 40px 20px;
-    background-color: #f7f7f7;
-  }
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
 
-  .footer {
-    background-color: #ff6600;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff6600;
+  color: white;
+  padding: 10px;
+}
 
-  .telLink, .Endereço{
-    color: black;
-  text-decoration: none; 
-  
-  }
-  .telLink:hover, .Endereço:hover{
-    color: #ff6600; 
-  }
+header .imagem img {
+  width: 150px; /* Tamanho ajustável */
+}
 
-.logo h1 {
-    margin: 0;
+.nav-cabecalho {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-cabecalho a {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-cabecalho a:hover {
+  border-color: white;
+}
+
+.banner {
+  background-color: #fff8e1;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.conteudo {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff8e1;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.produto {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  flex: 1 1 calc(100% / 3 - 40px);
+  max-width: calc(100% / 3 - 40px);
+  background-color: #ff6600;
+  color: #ffffff;
+}
+
+.produtos img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.promocoes {
+  background-color: #f7f7f7;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.sobreNos {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contatos {
+  padding: 40px 20px;
+  text-align: center;
+  height: 170px;
+  background-color: #f7f7f7;
+}
+
+.telLink,
+.Endereço {
+  color: black;
+  text-decoration: none;
+}
+
+.telLink:hover,
+.Endereço:hover {
+  color: #ff6600;
+}
+
+footer {
+  background-color: #ff6600;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .pesquisa {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .pesquisa input {
@@ -158,17 +142,98 @@ body {
   background-color: #fff;
   cursor: pointer;
   border-radius: 4px;
-  margin-left: 5px;
 }
 
 .pesquisa button:hover {
   background-color: #ddd;
 }
 
-a{
-  text-decoration: none;
-  color: #ffffff;
+.botaopedido {
+  border-radius: 30px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
+
+.botaopedido:hover {
+  background-color: #ff8800;
+}
+
+.cima {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 400px);
+}
+
+.cima p {
+  color: #ffffff;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Responsividade */
+
+/* Telas pequenas (mobile) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header .imagem img {
+    width: 100px; /* Reduz tamanho da logo */
+  }
+
+  .nav-cabecalho {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .produtos {
+    flex-direction: column;
+  }
+
+  .produto {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Telas muito pequenas (extra-small) */
+@media (max-width: 480px) {
+  .banner {
+    padding: 30px 10px;
+  }
+
+  .botaopedido {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .pesquisa input,
+  .pesquisa button {
+    width: 100%;
+  }
+}
+
+/* Telas médias (tablets) */
+@media (max-width: 1024px) {
+  .produtos {
+    gap: 10px;
+  }
+
+  .produto {
+    flex: 1 1 calc(100% / 2 - 20px);
+    max-width: calc(100% / 2 - 20px);
+  }
+}
+
 
 dialog{
   width: 40%;
