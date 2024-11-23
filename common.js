@@ -36,7 +36,7 @@ function insertHeader(path, title) {
   contato.innerText = "Contato";
   nav.appendChild(contato);
   const btnLogin = document.createElement("a");
-  btnLogin.href = `${path}login/index.html`;
+  btnLogin.href = '#login';
   btnLogin.id = "btnLogin";
   btnLogin.innerText = "Login";
   nav.appendChild(btnLogin);
