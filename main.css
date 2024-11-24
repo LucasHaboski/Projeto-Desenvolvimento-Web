@@ -1,171 +1,139 @@
-.imagem  {
-  width: 5px;
-  height: 5px;   
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
- 
-  }
-  
-.cima{
-    color: #ffffff;
-    font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+header {
+  display: flex;
+  background-color: #ff6600;
+  color: white;
+  text-align: center;
 }
 
-  h1, h2 {
-    color: #ff6600;
-  }
-
-  h3{
-    color: #ffffff;
-  }
-  
-  .header {
-    background-color: #ff6600;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    
-  }
-
-  .nav-cabecalho {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .nav-cabecalho a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 25px;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    border: 1px solid transparent;
-    transition: border-color 0.3s;
-  }
-  
-  .nav-cabecalho a:hover {
-    border-color: white;
-  }
-  
-   .banner {
-    background-color:#fff8e1 ;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 60px 20px;
-  } 
-  
-  .botaopedido {
-    border-radius: 30px;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .botaopedido:hover {
-    background-color: #ff8800;
-  }
-  
-  .conteudo {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #fff8e1;
-  }
-  
-  .produtos {
-    display: flex;
-    justify-content: space-around;   
-  }
-  
-  .produto {
-    border-radius: 30px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 30%;
-    background-color: #ff6600;
-    color: #ffffff;
-   
-  }
-  
-  .produtos img {
-    width: 100%;
-    border-radius: 30px;
-  }
-  
-  .promocoes {
-    background-color: #f7f7f7;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .sobreNos {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .contatos {
-    padding: 40px 20px;
-    text-align: center;
-    height: 170px;
-    background-color: #ddd;
-    padding: 40px 20px;
-    background-color: #f7f7f7;
-  }
-
-  .footer {
-    background-color: #ff6600;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .telLink, .Endereço{
-    color: black;
-  text-decoration: none; 
-  
-  }
-  .telLink:hover, .Endereço:hover{
-    color: #ff6600; 
-  }
-
-.logo h1 {
-    margin: 0;
+.container-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: calc(100% - 400px);
 }
 
-.pesquisa {
+.container-infos h1 {
+  color: white;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.nav-header {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 10px;
 }
 
-.pesquisa input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.pesquisa button {
-  padding: 5px 10px;
-  border: none;
-  background-color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-left: 5px;
-}
-
-.pesquisa button:hover {
-  background-color: #ddd;
-}
-
-a{
+.nav-header a {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 25px;
+  color: white;
   text-decoration: none;
-  color: #ffffff;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-header a:hover {
+  border-color: white;
+}
+
+
+dialog{
+  width: 40%;
+  min-width: 300px;
+  padding: 20px;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.5);
+}
+
+dialog input, select, textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+dialog button {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+dialog button:hover { background-color: #fd8637; }
+
+dialog button[type="button"]{ background-color: #3d3d3d; }
+dialog button[type="button"]:hover{ background-color: #5e5d5c; }
+
+dialog dialog button{ margin-top: 20px;}
+
+dialog::backdrop{
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+dialog p.erro{
+  padding: 10px;
+  background-color: rgb(255, 190, 190);
+  color: rgb(86, 2, 2);
+  text-align: center;
+}
+
+dialog p.ok{
+  padding: 10px;
+  background-color: rgb(190, 255, 201);
+  color: rgb(2, 86, 20);
+  text-align: center;
+}
+
+
+
+footer {
+  background-color: #ff6600;
+  color: white;
+  text-align: center;
+}
+footer p {
+  padding: 20px;
+  color: #fff8e1;
+}
+
+footer section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer section h2 {
+  color: #ff6600;
+}
+
+footer section p {
+  color: #000000;
+}
+
+footer section a {
+  text-decoration: none;
+  color: #000000;
+}
+
+footer section a:hover {
+  color: #ff6600;
+}
+
+footer section:nth-child(1),
+footer section:nth-child(3) {
+  background-color: #f7f7f7;
+}
+
+footer section:nth-child(2) {
+  background-color: #ffffff;
 }

@@ -2,37 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="./imagens/NovoLogo.png" type="image/png">
+  <link rel="icon" href="./imagens/logo.png" type="image/png">
   <title>Lanchonete Felicidade</title>
   <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="header">
-
-    <div class="imagem">
-        <img src="./imagens/NovoLogo.png" alt="Logo da Alegria no Ponto">
-    </div>
-    
-    <div class="cima">
-        <p><strong>Bem-vindo á Alegria no Ponto!</strong></p>
-    </div>  
-    <nav class="nav-cabecalho", id="menuCabecalho">
-      <a href ="./index.html">Home</a>
-      <a href ="./cardapio/index.html">Cardápio</a>
-      <a href="#sobre">Sobre Nós</a>
-      <a href="#contato">Contato</a>
-      <a href="./login/index.html" id="btnLogin">Login</a>
-    </nav>
-
+  <header>
   </header>
-
-  <section class="banner">
-    <h1><strong>Deliciosos lanches e muito mais.</strong></h><br>
-      <br>
-      <a href="./cardapio/index.html">
-        <button class="botaopedido">Faça seu pedido</button>
-      </a>
-  </section>
+  <main>
+    <section class="banner">
+      <h1><strong>Deliciosos lanches e muito mais.</strong></h><br>
+        <br>
+        <a href="./cardapio/index.html">
+          <button class="botaopedido">Faça seu pedido</button>
+        </a>
+    </section>
+  </main>
 
   <section id="destaques" class="conteudo">
     <h1>Destaques do nosso Cardápio</h1><br><br>
@@ -61,42 +47,8 @@
     </div>
   </section>
 
-  <section id="promo" class="promocoes">
-    <a href="lanches.html">
-    <h2>Promoções</h2>
-  </a>
-    <p>Confira nossas promoções especiais!</p>
-  </section>
-
-  <section id="sobre" class="sobreNos">
-    <h2>Sobre Nós</h2>
-    <p>Nosso compromisso? Sabor, qualidade e aquele atendimento que faz você voltar sempre.</p>
-  </section>
-
-  <section id="contato" class="contatos">
-    <h2>Contato</h2>
-    <p>Telefone: <a href="TEL:(41) 9 9999-9999" class="telLink">(41) 9 9999-9999</a></p>
-    <p>Endereço: <a href=" https://www.google.com/search?q=universidade+positivo&rlz=1C1PNFE_enBR1132BR1132&oq=univer&gs_lcrp=EgZjaHJvbWUqDQgBEAAYgwEYsQMYgAQyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIHCAIQLhiABDIHCAMQLhiABDIHCAQQABiABDIHCAUQABiABDINCAYQABiDARixAxiABDIHCAcQLhiABDIHCAgQABiPAjIHCAkQABiPAtIBCDI2NTRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" class="Endereço"> R. Prof. Pedro Viriato Parigot de Souza, 5300 - Cidade Industrial, Curitiba - PR</a></p>
-    <p>Horário: Seg-Sex, 10h - 22h</p>
-  </section>
-
-  <footer class="footer">
-    <p><strong>Siga-nos nas redes sociais!</strong></p>
-  </footer>
-
-  <dialog id="login">
-    <form>
-        <h2>Login</h2>
-            <label for="email"> E-mail:</label>
-            <input type="text" name="email" id="email"><br>
-            <label for="senha"> Senha: </label>
-            <input type="password" name="senha" id="senha"><br>
-            <button type="button" id="btnFechar">Sair</button>
-            <button type="submit">Entrar</button>
-    </form>
-  </dialog>
-
-  <script src="script.js"></script>
-
+  <footer></footer>  
+  <script src="./common.js"></script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
