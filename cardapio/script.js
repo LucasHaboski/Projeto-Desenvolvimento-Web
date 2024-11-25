@@ -3,10 +3,19 @@ createFooterContent();
 
 const currentUser = JSON.parse(sessionStorage.getItem("user"));
 
-if (!currentUser) {
-  const loginLink = document.getElementById("btnLogin");
-  loginLink.click();
-}
+const dialog = createLoginDialog("../");
+
+  if (!currentUser) {
+    dialog.showModal();
+    let msgErro = document.querySelector(".erro");
+    let msgOk = document.querySelector(".ok");
+    if (msgErro) {
+      dialog.removeChild(msgErro);
+    }
+    if (msgOk) {
+      dialog.removeChild(msgOk);
+    }
+  } 
 
 if (currentUser && currentUser.role === roles.ADMIN) {
   const dialog = document.getElementById("adminCardapioDialog");
