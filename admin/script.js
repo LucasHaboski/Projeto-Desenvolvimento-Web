@@ -1,75 +1,27 @@
-insertHeader("../", "Portal do Administrador");
-function generateCards() {
-    const cardContainer = document.getElementById('cardContainer');
-    const carts = [];
+insertHeader("../", "Portal do Administrador"); 
 
-    
-    if (JSON.parse(sessionStorage.getItem("carts")) != null) {
-        carts.push(...JSON.parse(sessionStorage.getItem("carts")));
-    }
+const orders = JSON.parse(sessionStorage.getItem("orders")) || []
 
-    
-    const uniqueUsers = new Set();
+const ordersTable = document.getElementById("tabelaPedidos")
 
-    carts.forEach((cart) => {
-        if (cart.user && cart.user.username) {
-            uniqueUsers.add(cart.user.username);
-        }
-    });
+function preencherTabela(orders) {
 
-    let i = 1;
-    uniqueUsers.forEach((username) => {
-        
-        const card = document.createElement('div');
-        card.classList.add('card');
-        const title = document.createElement('h3');
-        title.textContent = `Pedido ${i}`; 
-        card.appendChild(title);
-        const description = document.createElement('p');
-        description.textContent = `Cliente: ${username}.`; 
-        card.appendChild(description);
-        card.addEventListener('click', () => generateCart(username, carts));
-        cardContainer.appendChild(card);
-        i++;
-    });
+    orders.forEach((order, i) => {
+        order.cart.forEach((item, itemIndex) => {
+            const linha = document.createElement("tr")
 
+            linha.innerHTML = `
+                <td>${i + 1}</td> 
+                <td>${item.item || "Item Desconhecido"}</td> 
+                <td>R$ ${item.valor?.toFixed(2) || "0.00"}</td> 
+                <td>${item.tamanho || "Padrão"}</td>
+                <td>${item.quantidade || 1}</td> 
+                <td>${order.obs || "Sem observações"}</td> 
+            `
+
+            ordersTable.appendChild(linha)
+        })
+    })
 }
-function generateCart(username, carts){
-    const cartItens = document.getElementById("cartItens");
-    const cartContainer = document.getElementById("cart");
-    cartItens.textContent = "";
-    let valorTotal = 0;
-    let quantidadeTotal = 0;
-    carts.forEach((cart) => {
-      if (cart.user.username == username) {
-        const cartDiv = document.createElement("div");
-        const cartItem = document.createElement("p");
-        cartItem.textContent = `Item: ${cart.item}`;
-        cartDiv.appendChild(cartItem);
-        const cartValor = document.createElement("p");
-        cartValor.textContent = `Preço: R$${cart.valor},00`;
-        valorTotal += cart.valor;
-        cartDiv.appendChild(cartValor);
-        const cartQuantidade = document.createElement("p");
-        cartQuantidade.textContent = `Quantidade: ${cart.quantidade}`;
-        quantidadeTotal += cart.quantidade;
-        cartDiv.appendChild(cartQuantidade);
-        const hr = document.createElement("hr");
-        cartItens.appendChild(cartDiv);
-        cartItens.appendChild(hr);
-      }
-    });
-    const cartTotal = document.getElementById("cartTotal");
-    cartTotal.textContent = "";
-    const total = document.createElement("p");
-    total.textContent = `Total: R$${valorTotal},00`;
-    const quantidade = document.createElement("p");
-    quantidade.textContent = `Quantidade: ${quantidadeTotal}`;
 
-    cartTotal.appendChild(total);
-    cartTotal.appendChild(quantidade);
-
-    cartContainer.style.display = "flex";
-    cartItens.scrollTop = cartItens.scrollHeight;
-}
-generateCards();
+preencherTabela(orders)

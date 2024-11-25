@@ -1,23 +1,59 @@
+header {
+  display: flex;
+  background-color: #253b69;
+  color: white;
+  text-align: center;
+}
+
+.container-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: calc(100% - 400px);
+}
+
+.container-infos h1 {
+  color: white;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-header a {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 25px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-header a:hover {
+  border-color: white;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-h1,
-h2 {
-  color: #ff6600;
-}
-
-h3 {
-  color: black;
-}
-
-.header {
-  background-color: #ff6600;
-  color: white;
+h1, h2 {
+  color: #253b69;
   text-align: center;
-  padding: 20px;
+}
+
+h1#ped {
+  padding: 60px;
 }
 
 .nav-cabecalho {
@@ -36,124 +72,6 @@ h3 {
   transition: border-color 0.3s;
 }
 
-.nav-cabecalho a:hover {
-  border-color: white;
-}
-
-.banner {
-  background-color: #fff8e1;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.botaopedido {
-  border-radius: 30px;
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.botaopedido:hover {
-  background-color: #ff8800;
-}
-
-.conteudo {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #fff8e1;
-}
-
-.produtos {
-  display: flex;
-  justify-content: space-around;
-}
-
-.produto {
-  border-radius: 30px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  width: 30%;
-  background-color: #ff6600;
-  color: #ffffff;
-}
-
-.produtos img {
-  width: 100%;
-  border-radius: 30px;
-}
-
-.promocoes {
-  background-color: #f7f7f7;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.sobreNos {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.contatos {
-  padding: 40px 20px;
-  text-align: center;
-  height: 170px;
-  background-color: #ddd;
-  padding: 40px 20px;
-  background-color: #f7f7f7;
-}
-
-.footer {
-  background-color: #ff6600;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.telLink,
-.Endereço {
-  color: black;
-  text-decoration: none;
-}
-.telLink:hover,
-.Endereço:hover {
-  color: #ff6600;
-}
-
-.logo h1 {
-  margin: 0;
-}
-
-.pesquisa {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pesquisa input {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.pesquisa button {
-  padding: 5px 10px;
-  border: none;
-  background-color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-left: 5px;
-}
-
-.pesquisa button:hover {
-  background-color: #ddd;
-}
-
 a {
   text-decoration: none;
   color: #ffffff;
@@ -166,59 +84,28 @@ a {
   justify-content: center;
 }
 
-#cardContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 30%);
-  gap: 10%;
-  width: 100%;
-  padding: 16px;
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
 }
 
-.card {
-  color: black;
-  background-color: #f3f3f3;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #518ea7;
+  color: white;
+}
+
+table tr td:last-child{
+  width: 90px;
   text-align: center;
 }
 
-#cart {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  position: fixed;
-  width: 300px;
-  height: 400px;
-  background-color: #ff6600;
-  top: 30%;
-  left: 10px;
-  padding: 10px;
-  border-radius: 10px;
-}
+table th:last-child{text-align: center; }
 
-#cart h2 {
-  color: #fff8e1;
-}
-
-#cartItens {
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  max-height: 60%;
-  background-color: #fff8e1;
-  padding: 0px 10px 0px 10px;
-  border-radius: 10px;
-}
-
-#cartItens {
-  user-select: none;
-}
-
-#cartTotal {
-  display: flex;
-  justify-content: space-between;
-  height: 10%;
-  background-color: #fff8e1;
-  border-radius: 10px;
-  padding: 0px 20px 0px 20px;
-}
+table tr:nth-child(even) {background-color: #eee; }

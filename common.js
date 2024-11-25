@@ -99,10 +99,12 @@ function createLoginDialog(path) {
       }
     });
     if (!logged) {
-      const erro = document.createElement("p");
-      erro.classList.add("erro");
-      erro.innerText = "Login ou senha inválida";
-      dialog.insertBefore(erro, dialog.firstChild);
+  const existingErrors = dialog.querySelectorAll(".erro");
+  existingErrors.forEach(error => error.remove());
+  const erro = document.createElement("p");
+  erro.classList.add("erro");
+  erro.innerText = "Login ou senha inválida";
+  dialog.insertBefore(erro, dialog.firstChild);
     }
   });
   return dialog;
@@ -164,18 +166,28 @@ function insertHeader(path, title) {
       window.location.href = `${path}index.html`;
     }
   };
-
-  const aboutLink = document.createElement("a");
-  aboutLink.href = "#about";
-  aboutLink.innerText = "Sobre Nós";
-  nav.appendChild(aboutLink);
-
-  const contactLink = document.createElement("a");
-  contactLink.href = "#contact";
-  contactLink.innerText = "Contato";
-  nav.appendChild(contactLink);
+  if(title != "Portal do Administrador"){
+    const aboutLink = document.createElement("a");
+    aboutLink.href = "#about";
+    aboutLink.innerText = "Sobre Nós";
+    nav.appendChild(aboutLink);
+  
+    const contactLink = document.createElement("a");
+    contactLink.href = "#contact";
+    contactLink.innerText = "Contato";
+    nav.appendChild(contactLink);
+  }
+  
   container.appendChild(nav);
   header.appendChild(container);
+
+  if(user && user.role === roles.ADMIN){
+    const adminLink = document.createElement("a");
+    adminLink.href = `${path}admin/index.html`;
+    adminLink.innerText = "Admin";
+    nav.appendChild(adminLink);
+  }
+
 }
 
 function createFooterContent() {
