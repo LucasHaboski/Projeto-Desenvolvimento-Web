@@ -8,9 +8,19 @@ if (!currentUser) {
   loginLink.click();
 }
 
-if (currentUser && currentUser.role !== roles.DEFAULT) {
-  alert("Apenas um usuário padrão pode usar essa área!");
-  window.location.href = "../index.html";
+if (currentUser && currentUser.role === roles.ADMIN) {
+  const dialog = document.getElementById("adminCardapioDialog");
+  const dialogMsg = document.getElementById("dialogMsg");
+  const fecharDialogButton = document.getElementById("fecharDialog");
+
+  dialogMsg.textContent = "Apenas um usuário padrão pode usar essa área!";
+
+  dialog.showModal();
+
+  fecharDialogButton.addEventListener("click", () => {
+    dialog.close();
+    window.location.href = "../index.html";
+  });
 }
 
 const cartItems = JSON.parse(sessionStorage.getItem("carts")) || [];

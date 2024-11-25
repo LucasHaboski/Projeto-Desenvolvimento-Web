@@ -176,6 +176,14 @@ function insertHeader(path, title) {
   nav.appendChild(contactLink);
   container.appendChild(nav);
   header.appendChild(container);
+
+  if(user.role === roles.ADMIN){
+    const adminLink = document.createElement("a");
+    adminLink.href = `${path}admin/index.html`;
+    adminLink.innerText = "Admin";
+    nav.appendChild(adminLink);
+  }
+
 }
 
 function createFooterContent() {

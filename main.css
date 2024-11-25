@@ -41,14 +41,13 @@ header {
   border-color: white;
 }
 
-
 dialog{
   width: 40%;
   min-width: 300px;
-  padding: 20px;
   border: 0px;
-  border-radius: 10px;
+  padding: 20px;
   box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 dialog input, select, textarea {
@@ -84,18 +83,16 @@ dialog::backdrop{
 dialog p.erro{
   padding: 10px;
   background-color: rgb(255, 190, 190);
-  color: rgb(86, 2, 2);
+  color: rgb(70, 9, 9);
   text-align: center;
 }
 
 dialog p.ok{
   padding: 10px;
   background-color: rgb(190, 255, 201);
-  color: rgb(2, 86, 20);
+  color: rgb(19, 124, 41);
   text-align: center;
 }
-
-
 
 footer {
   background-color: #ff6600;
@@ -136,4 +133,21 @@ footer section:nth-child(3) {
 
 footer section:nth-child(2) {
   background-color: #ffffff;
+}
+
+/* Dialog Admin no Cardapio */
+#adminCardapioDialog {
+  width: 400px; 
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center; 
+}
+
+#dialogMsg {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
 }
